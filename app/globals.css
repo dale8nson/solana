@@ -2,20 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/Helvetica.woff2') format('woff2');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/Roboto-Regular.woff2') format('woff2');
 }
