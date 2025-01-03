@@ -79,10 +79,11 @@ export default function Home() {
             <h2 className="text-[70px]">Fast for everyone.</h2>
           </div>
           <p className="text-[21px] w-2/5 text-left leading-normal">Bring blockchain to the people. Solana supports experiences for power users, new consumers, and everyone in between.</p>
-        </div>
+        
         <div className="flex gap-4">
           <CTA onClick={() => { }} className="rounded-3xl px-8">START BUILDING</CTA>
           <CTA gradient={false} className="border-2 border-solid bg-black text-white rounded-3xl px-8" onClick={() => { }}>READ DOCS</CTA>
+        </div>
         </div>
         <div className="flex flex-col justify-center items-center w-3/4 gap-8 mt-32">
           <h3 className="font-[Helvetica] text-[15px] leading-[16.8px] tracking-[0.8px] text-[#618ADC]">POWERING TOOLS AND INTEGRATIONS FROM COMPANIES ALL AROUND THE WORLD</h3>
