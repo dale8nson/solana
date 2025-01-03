@@ -31,7 +31,7 @@ const CTA = ({ gradient=true, onClick, className, children }: {gradient?: boolea
   }, [])
 
   return (
-    <button id={id} onPointerEnter={gradient ? onPointerEnter : () => {}} className={`relative z-20 m-0 py-2 font-[Roboto] text-[15px] ${className}`} onClick={onClick}>{children}</button>
+    <button id={id} onPointerEnter={gradient ? onPointerEnter : () => {}} className={`relative flex flex-row items-center justify-center z-20 m-0 py-2 font-[Roboto] text-[15px] max-h-10 ${className}`} onClick={onClick}>{children}</button>
   );
 }
 
