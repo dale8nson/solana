@@ -128,7 +128,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-16 lg:grid w-11/12 lg:grid-cols-3 lg:gap-x-20 lg:grid-rows-1 mt-10 md:-gap-16 lg:mt-40 mx-40 h-full">
-            <div className="flex flex-col md:items-end lg:translate-y-[15%]">
+            <div className="flex flex-col md:items-end lg:items-start lg:translate-y-[15%]">
               <h3 className="text-[35px] leading-[37px] md:text-[40px] md:leading-[46.2px] tracking-[1px] text-left md:text-right lg:text-left w-full">Made for mass adoption.</h3>
               <p className="font-[Roboto] text-[16px] text-[#c4c4c4] leading-[27.3px] tracking-[0px] before:content-[url('/green-dot.svg')] before:content-center before:flex before:flex-row before:translate-x-[-0.5rem] before:translate-y-[0.7rem] translate-x-[0.4rem] text-left">LIVE DATA</p>
             </div>
