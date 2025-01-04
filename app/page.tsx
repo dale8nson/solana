@@ -170,7 +170,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-8 lg:grid w-full lg:grid-cols-2 lg:gap-x-0 lg:gap-y-8 lg:grid-rows-1 lg:mt-40 pb-8 md:mx-40 h-full">
-            <div className="flex flex-col items-center gap-4 p-4 lg:col-span-2 lg:justify-between">
+            <div className="flex flex-col md:flex-row items-center gap-4 p-4 lg:col-span-2 lg:justify-between">
               <h3 className="text-[39px] w-full leading-[46.2px] tracking-[1px] text-left lg:w-[70%]">Build for growth.</h3>
               <div className="flex flex-wrap flex-row gap-8 w-full">
                 <CTA onClick={() => { }} gradient={false} className="border-[#a962ff] border-solid border-2 p-4 rounded-xl bg-[#111]">NFTs</CTA>
@@ -180,7 +180,7 @@ export default function Home() {
                 <CTA onClick={() => { }} gradient={false} className="p-4 rounded-xl bg-[#111]">DAOs</CTA>
               </div>
             </div>
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-0 w-full md:col-span-2">
               <Image src="/anybodies-img.png" alt="build for growth" width={550} height={400} className="md:w-full" />
               <div className="flex flex-col items-start justify-center gap-8 px-4 py-8 bg-[#111] md:px-14">
                 <Image src="/anybodies-logo.svg" alt="build for growth" width={240} height={53} />
