@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header className="sticky z-40 top-0 left-0 w-full h-[67px] bg-black bg-opacity-60 backdrop-blur-sm flex p-0 gap-10 md:justify-around">
       <HamburgerButton onClick={() => setIsOpen(true)} />
-      <div id="mobile-menu" className="fixed z-40 -translate-x-[300px] left-0 flex flex-col gap-4 justify-center items-start bg-[linear-gradient(to_top_right,_#00bcd4_0%,_#0047ff_100%)] opacity-95 rounded-r-lg text-black p-8">
+      <div id="mobile-menu" className="fixed z-40 -translate-x-[300px] left-0 top-0 flex flex-col gap-4 justify-center items-start bg-[linear-gradient(to_top_right,_#00bcd4_0%,_#0047ff_100%)] opacity-95 rounded-r-lg text-black p-8">
         <CloseButton onClick={() => setIsOpen(false)} />
         <MenuButton className="text-[22px]" onClick={() => { }}>Learn</MenuButton>
         <MenuButton className="text-[22px]" onClick={() => { }}>Documentation</MenuButton>
