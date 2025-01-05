@@ -9,7 +9,7 @@ import { GradientText } from "@/components/GradientText"
 import { MenuButton } from "@/components/MenuButton"
 import { Card } from "@/components/Card"
 import { PointerEventHandler } from "react"
-import { on } from "events"
+import { Carousel } from "@/components/Carousel"
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger)
@@ -23,69 +23,86 @@ export default function Home() {
       gsap.to("#tr-img", { x: "250px", y: "-590px", rotateX: -70, scrollTrigger: { trigger: "main", start: "top 100px", end: "950px", scrub: true } })
       gsap.set("#mid", { scaleY: -2 })
       gsap.to("#mid", { keyframes: [{ y: "65%", scaleX: 1.25, scaleY: 1 }, { scaleY: 2 }, { scaleY: -1, scaleX: 1 }, { scaleY: -3, scaleX: 0.75 }, { scaleY: -1, scaleX: 1 }], scrollTrigger: { trigger: "#grid-1", start: "top 50%", end: "+=1800px", scrub: true } })
+
+      // let sc: HTMLElement
+      // if (sc = document.getElementById("scroll-container") as HTMLElement) {
+      //   const st = ScrollTrigger.observe({
+      //     target: "window",
+      //     onDown: () => {
+      //       const sc = document.getElementById("scroll-container") as HTMLElement
+      //       const { x: scx, width: scw } = sc?.getBoundingClientRect()
+      //       const { x } = (cards[cards.length - 1] as HTMLElement)?.getBoundingClientRect()
+      //       if (x > scx + scw - 16) {
+      //         gsap.to(cards, { x: "-=100" })
+      //       }
+      //     },
+      //     onUp: () => {
+      //       const sc = document.getElementById("scroll-container") as HTMLElement
+      //       const { x: scx, width: scw } = sc?.getBoundingClientRect()
+      //       const { x } = (cards[0] as HTMLElement)?.getBoundingClientRect()
+      //       if (x < 0) {
+      //         gsap.to(cards, { x: "+=100" })
+      //       }
+
+      //     },
+      //     preventDefault: true
+      //   })
+      //   st.disable()
+
+      //   sc.onmouseover = () => st.enable()
+      //   sc.onpointerleave = () => st.disable()
+      //   sc.ontouchmove = (e) => {
+      //     st.enable()
+      //   }
+      // }
     })
 
     mm.add("(min-width: 0px)", () => {
       gsap.to("#tl-img", { x: "-350px", y: "-600px", rotateX: -70, scrollTrigger: { trigger: "body", start: "top top", end: "+=980px", scrub: true } })
       gsap.to("#tr-img", { x: "350px", y: "-690px", rotateX: -70, scrollTrigger: { trigger: "body", start: "top top", end: "+=980px", scrub: true } })
+
+      // const st = ScrollTrigger.observe({
+      //   target: "#scroll-container",
+      //   type:"touch",
+      //   onLeft: () => {
+      //     const sc = document.getElementById("scroll-container") as HTMLElement
+      //     const { x: scx, width: scw } = sc?.getBoundingClientRect()
+      //     const { x } = (cards[cards.length - 1] as HTMLElement)?.getBoundingClientRect()
+      //     if (x > scx + scw - 16) {
+      //       gsap.to(cards, { x: "-=100" })
+      //     }
+      //   },
+      //   onRight: () => {
+      //     const sc = document.getElementById("scroll-container") as HTMLElement
+      //     const { x: scx, width: scw } = sc?.getBoundingClientRect()
+      //     const { x } = (cards[0] as HTMLElement)?.getBoundingClientRect()
+      //     if (x < 0) {
+      //       gsap.to(cards, { x: "+=100" })
+      //     }
+
+      //   },
+      //   preventDefault: true
+      // })
+
+      
     })
 
     const cards = gsap.utils.toArray(".card")
 
-    const st = ScrollTrigger.observe({
-      target: "#scroll-container",
-      onDown: () => {
-        const sc = document.getElementById("scroll-container") as HTMLElement
-        const { x: scx, width: scw } = sc?.getBoundingClientRect()
-        const { x } = (cards[cards.length - 1] as HTMLElement)?.getBoundingClientRect()
-        if (x > scx + scw - 16) {
-          gsap.to(cards, { x: "-=100" })
-        }
 
-        // cards.forEach((card, i) => {
-        //   const el = card as HTMLElement
-        //   const { x, width } = el.getBoundingClientRect()
-        //   if (x < scx - width) {
-        //     gsap.set(cards, { x: scx + scw - 1 })
-        //   } else {
-        //     gsap.to(card as gsap.TweenTarget, { x: "-=100" })
-        //   }
-        // })
-      },
-      onUp: () => {
-        const sc = document.getElementById("scroll-container") as HTMLElement
-        const { x: scx, width: scw } = sc?.getBoundingClientRect()
-        const { x } = (cards[0] as HTMLElement)?.getBoundingClientRect()
-        if (x < 0) {
-          gsap.to(cards, { x: "+=100" })
-        }
 
-        // cards.forEach((card, i) => {
-        //   const el = card as HTMLElement
-        //   const { x, width } = el.getBoundingClientRect()
-        //   if (x > scx + scw) {
-        //     gsap.set(cards, { x: scx - width + 1 })
-        //   } else {
-        //     gsap.to(card as gsap.TweenTarget, { x: "+=100" })
-        //   }
-        // })
-      },
-      preventDefault: true
-    })
-  
-
-  },[])
+  }, [])
 
 
   return (
     <div className="relative w-full h-full">
       <div className="relative z-20 w-full h-[50px] p-8 md:p-2 md:h-[37px] bg-gradient-to-r from-[#00bcd4] to-[#0047ff] flex items-center justify-center">
-        <p className="text-black relative z-20 text-center text-[20px] md:text-[17px] font-[Roboto]">BREAKPOINT 2023 - NEW CITY. NEW VIBES - GET EARLY ACCESS -&gt;</p>
+        <p className="text-black relative z-20 text-center text-[17px] md:text-[17px] font-[Roboto]">BREAKPOINT 2023 - NEW CITY. NEW VIBES - GET EARLY ACCESS -&gt;</p>
       </div>
-      <Image id="tl-img" className="fixed -top-[20px] md:-top-[37px]       -translate-x-40 md:-translate-x-24 scale-[.9] md:scale-100" src="/tl-img.png" alt="solana logo" width={646} height={961} />
-      <Image id="tr-img" className="fixed right-0 translate-x-40 md:right-0 -top-[55px] md:-top-[37px] md:scale-100 scale-[0.9]" src="/tr-img.png" alt="logo" width={696} height={1259} />
+      <Image id="tl-img" className="fixed z-0 -top-[20px] md:-top-[37px]  -translate-x-40 md:-translate-x-24 scale-[.9] md:scale-100" src="/tl-img.png" alt="solana logo" width={646} height={961} />
+      <Image id="tr-img" className="fixed z-0 right-0 translate-x-40 md:right-0 -top-[55px] md:-top-[37px] md:scale-100 scale-[0.9]" src="/tr-img.png" alt="logo" width={696} height={1259} />
       <Header />
-      <main className="relative z-20 flex flex-col items-center md:justify-center text-center overflow-hidden gap-8 md:gap-0">
+      <main className="relative z-30 flex flex-col items-center md:justify-center text-center overflow-hidden gap-8 md:gap-0">
         <div className="top-0 left-0 flex flex-col items-center md:justify-center w-full text-center leading-[75.6px] gap-4 md:gap-16 mt-4 md:mt-32">
           <div className="flex flex-col items-center md:justify-center gap-4 md:gap-16">
             <h2 className="text-[30px] leading-[35px] md:text-[70px]">Powerful for developers.</h2>
@@ -198,7 +215,7 @@ export default function Home() {
           </div>
           <div className="relative flex flex-col items-top justify-start gap-8 mb-32 w-full md:w-11/12">
             <h3 className="text-[38px] leading-[46.2px] tracking-[1px] text-left">Join a thriving community.</h3>
-            <div id="scroll-container" className="relative z-30 top-0 left-0 flex flex-row gap-4 mb-8 flex-nowrap">
+            {/* <div id="scroll-container" className="relative z-30 top-0 left-0 flex flex-row gap-4 mb-8 flex-nowrap">
               <Card className="card min-w-[348px] min-h-[448px]">
                 <Card.Text className="w-[300px] h-[200px]">
                   <GradientText from="#f087ff" to="#f087ff" className="scale-[3] translate-x-[90%]">11,000</GradientText>
@@ -226,7 +243,8 @@ export default function Home() {
                 </Card.Text>
                 <Card.Image src="/com-5.png" alt="solana hacker house keynote" width={200} height={200} className="w-[300px] h-[200px]" />
               </Card>
-            </div>
+            </div> */}
+            <Carousel />
             <div className="flex flex-col items-center justify-center gap-16 md:w-3/4 mx-auto">
               <h2 className="text-[30px] leading-[35px] md:text-[38px] text-center md:leading-[46.2px] tracking-[1px]">It's time to join the thousands of creators, artists, and developers using Solana.</h2>
               <CTA onClick={() => { }} className="rounded-3xl px-8">START BUILDING</CTA>

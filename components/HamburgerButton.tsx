@@ -6,7 +6,7 @@ const HamburgerButton = ({onClick}:{onClick:MouseEventHandler}) => {
   return (
     <button onClick={onClick}>
       <svg
-        className="w-16 h-8"
+        className="w-16 h-8 md:hidden"
         fill="white"
         stroke="white"
         viewBox="0 0 24 24"
