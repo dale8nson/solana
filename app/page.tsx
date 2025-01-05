@@ -32,7 +32,7 @@ export default function Home() {
 
     const cards = gsap.utils.toArray(".card")
 
-    ScrollTrigger.observe({
+    const st = ScrollTrigger.observe({
       target: "#scroll-container",
       onDown: () => {
         const sc = document.getElementById("scroll-container") as HTMLElement
@@ -72,8 +72,9 @@ export default function Home() {
       },
       preventDefault: true
     })
+  
 
-  }, [])
+  },[])
 
 
   return (
@@ -81,7 +82,7 @@ export default function Home() {
       <div className="relative z-20 w-full h-[50px] p-8 md:p-2 md:h-[37px] bg-gradient-to-r from-[#00bcd4] to-[#0047ff] flex items-center justify-center">
         <p className="text-black relative z-20 text-center text-[20px] md:text-[17px] font-[Roboto]">BREAKPOINT 2023 - NEW CITY. NEW VIBES - GET EARLY ACCESS -&gt;</p>
       </div>
-      <Image id="tl-img" className="fixed -top-[30px] md:-top-[37px]       -translate-x-40 md:-translate-x-24 scale-[.9] md:scale-100" src="/tl-img.png" alt="solana logo" width={646} height={961} />
+      <Image id="tl-img" className="fixed -top-[20px] md:-top-[37px]       -translate-x-40 md:-translate-x-24 scale-[.9] md:scale-100" src="/tl-img.png" alt="solana logo" width={646} height={961} />
       <Image id="tr-img" className="fixed right-0 translate-x-40 md:right-0 -top-[55px] md:-top-[37px] md:scale-100 scale-[0.9]" src="/tr-img.png" alt="logo" width={696} height={1259} />
       <Header />
       <main className="relative z-20 flex flex-col items-center md:justify-center text-center overflow-hidden gap-8 md:gap-0">
@@ -118,7 +119,7 @@ export default function Home() {
               <GradientText from="#8c01fa" to="#195b9b" className="scale-[2] md:scale-[4] translate-x-[46%] md:translate-x-[140%] translate-y-[40%]">11.5M+</GradientText>
               <p className="font-[Roboto] text-[16px] text-[#c4c4c4] leading-[18px] tracking-[0px]">ACTIVE ACCOUNTS</p>
             </div>
-            <div className="flex flex-col row-span-1 w-[530px]  items-start justify-center gap-1">
+            <div className="flex flex-col items-end row-span-1 w-full md:w-[530px]  md:items-start justify-center gap-0 md:gap-1">
               <GradientText to="#0047ff" from="#00bcd4" className="scale-[2] md:scale-[4] translate-x-[46%] md:translate-x-[148%] translate-y-[40%]">21.9M</GradientText>
               <p className="font-[Roboto] text-[16px] text-[#c4c4c4] leading-[18px] tracking-[0px]">NFTS MINTED</p>
             </div>
@@ -197,7 +198,7 @@ export default function Home() {
           </div>
           <div className="relative flex flex-col items-top justify-start gap-8 mb-32 w-full md:w-11/12">
             <h3 className="text-[38px] leading-[46.2px] tracking-[1px] text-left">Join a thriving community.</h3>
-            <div id="scroll-container" className="scroll-container relative z-20 top-0 left-0 flex flex-row gap-4 mb-8 flex-nowrap">
+            <div id="scroll-container" className="relative z-30 top-0 left-0 flex flex-row gap-4 mb-8 flex-nowrap">
               <Card className="card min-w-[348px] min-h-[448px]">
                 <Card.Text className="w-[300px] h-[200px]">
                   <GradientText from="#f087ff" to="#f087ff" className="scale-[3] translate-x-[90%]">11,000</GradientText>
