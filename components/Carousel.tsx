@@ -16,6 +16,8 @@ const Carousel = () => {
       const st = ScrollTrigger.observe({
         target: "#scroll-container",
         type: "touch",
+        onUp: () => void 0,
+        onDown: () => void 0,
         onLeft: () => {
           const sc = document.getElementById("scroll-container") as HTMLElement
           const { x: scx, width: scw } = sc?.getBoundingClientRect()
