@@ -6,10 +6,36 @@ import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
 
 const Carousel = () => {
+  gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
     const cards = gsap.utils.toArray(".card")
     const mm = gsap.matchMedia()
+
+    mm.add("(min-width: 0px)", () => {
+      const st = ScrollTrigger.observe({
+        target: "#scroll-container",
+        type: "touch",
+        onLeft: () => {
+          const sc = document.getElementById("scroll-container") as HTMLElement
+          const { x: scx, width: scw } = sc?.getBoundingClientRect()
+          const { x } = (cards[cards.length - 1] as HTMLElement)?.getBoundingClientRect()
+          if (x > scx + scw - 16) {
+            gsap.to(cards, { x: "-=100" })
+          }
+        },
+        onRight: () => {
+          const sc = document.getElementById("scroll-container") as HTMLElement
+          const { x: scx, width: scw } = sc?.getBoundingClientRect()
+          const { x } = (cards[0] as HTMLElement)?.getBoundingClientRect()
+          if (x < 0) {
+            gsap.to(cards, { x: "+=100" })
+          }
+
+        },
+        preventDefault: true
+      })
+    })
 
     mm.add("(min-width: 768px)", () => {
       let sc: HTMLElement
@@ -43,31 +69,6 @@ const Carousel = () => {
           st.enable()
         }
       }
-    })
-
-    mm.add("(min-width: 0px)", () => {
-      const st = ScrollTrigger.observe({
-        target: "#scroll-container",
-        type: "touch",
-        onLeft: () => {
-          const sc = document.getElementById("scroll-container") as HTMLElement
-          const { x: scx, width: scw } = sc?.getBoundingClientRect()
-          const { x } = (cards[cards.length - 1] as HTMLElement)?.getBoundingClientRect()
-          if (x > scx + scw - 16) {
-            gsap.to(cards, { x: "-=100" })
-          }
-        },
-        onRight: () => {
-          const sc = document.getElementById("scroll-container") as HTMLElement
-          const { x: scx, width: scw } = sc?.getBoundingClientRect()
-          const { x } = (cards[0] as HTMLElement)?.getBoundingClientRect()
-          if (x < 0) {
-            gsap.to(cards, { x: "+=100" })
-          }
-
-        },
-        preventDefault: true
-      })
     })
 
   }, [])
